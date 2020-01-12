@@ -9,7 +9,7 @@ type propsType = {
 /**
  * the root component which store the context
  * @param {propsType} props props of component
- * @return {Component} the Context Provider
+ * @return {React.Component} the Context Provider
  */
 const Manager: React.FunctionComponent<propsType> = (props) => {
     return (

@@ -4,8 +4,8 @@ import {Socket} from '@runnan/obvious/lib/Socket'; // eslint-disable-line
 
 /**
  * the hook to get and set state of obvious
- * @param stateName the stateName of the obvious state
- * @return [value, setValue] corresponding to the value of obvious' state and the method to set the value
+ * @param {string} stateName the stateName of the obvious state
+ * @return {[any, Function]} [value, setValue] corresponding to the value of obvious' state and the method to set the value
  */
 function useObviousState(stateName: string) {
     const socket: Socket = useSocket();

@@ -1,11 +1,12 @@
 import React from 'react';
 import SocketContext from '../context/socket-context';
+import {Socket} from '@runnan/obvious/lib/Socket'; // eslint-disable-line
 
 /**
  * the HOC to genertate a component which can use the socket and get the state of obvious
- * @param stateNames the stateNames of obvious
- * @param Component the compoent to be wrapped
- * @return the component to return
+ * @param  {string[]} stateNames the states' names of obvious which you need to use
+ * @param {React.Component} component the compoent to be wrapped
+ * @return {React.Component} wrapped component
  */
 const withSocket = <P extends object>( stateNames: string[] ) => ( Component: React.ComponentType<P> ) => { // eslint-disable-line
     return class Wrapper extends React.Component<P> {
@@ -15,11 +16,11 @@ const withSocket = <P extends object>( stateNames: string[] ) => ( Component: Re
 
         static contextType = SocketContext;
 
-        constructor(props: P) {
-            super(props);
+        constructor(props: P, context: Socket) {
+            super(props, context);
             const initialState = {};
             const stateChanger = {};
-            const socket = this.context;
+            const socket = context;
             for (const stateName of stateNames) {
                 initialState[stateName] = socket.getState(stateName);
                 stateChanger[stateName] = (newValue: any) => {

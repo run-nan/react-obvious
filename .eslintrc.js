@@ -42,8 +42,8 @@ module.exports = {
     }],
     "valid-jsdoc": [1, {
         "requireParamDescription": true,
-        "requireParamType": false, // paramType can be declared with ts
-        "requireReturnType": false, // returnType can be declared with ts
+        "requireParamType": true,
+        "requireReturnType": true,
         "requireReturnDescription": true
 
     }],
