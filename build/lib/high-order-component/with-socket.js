@@ -5,19 +5,19 @@ var react_1 = tslib_1.__importDefault(require("react"));
 var socket_context_1 = tslib_1.__importDefault(require("../context/socket-context"));
 /**
  * the HOC to genertate a component which can use the socket and get the state of obvious
- * @param stateNames the stateNames of obvious
- * @param Component the compoent to be wrapped
- * @return the component to return
+ * @param  {string[]} stateNames the states' names of obvious which you need to use
+ * @param {React.Component} component the compoent to be wrapped
+ * @return {React.Component} wrapped component
  */
 var withSocket = function (stateNames) { return function (Component) {
     var _a;
     return _a = /** @class */ (function (_super) {
             tslib_1.__extends(Wrapper, _super);
-            function Wrapper(props) {
-                var _this = _super.call(this, props) || this;
+            function Wrapper(props, context) {
+                var _this = _super.call(this, props, context) || this;
                 var initialState = {};
                 var stateChanger = {};
-                var socket = _this.context;
+                var socket = context;
                 var _loop_1 = function (stateName) {
                     initialState[stateName] = socket.getState(stateName);
                     stateChanger[stateName] = function (newValue) {

@@ -1,6 +1,6 @@
 {
   "name": "@runnan/react-obvious",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "a react library to manage socket of obvious.js",
   "main": "index.js",
   "directories": {

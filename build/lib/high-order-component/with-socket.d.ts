@@ -1,12 +1,13 @@
 import React from 'react';
+import { Socket } from '@runnan/obvious/lib/socket';
 /**
  * the HOC to genertate a component which can use the socket and get the state of obvious
- * @param stateNames the stateNames of obvious
- * @param Component the compoent to be wrapped
- * @return the component to return
+ * @param  {string[]} stateNames the states' names of obvious which you need to use
+ * @param {React.Component} component the compoent to be wrapped
+ * @return {React.Component} wrapped component
  */
 declare const withSocket: <P extends object>(stateNames: string[]) => (Component: React.ComponentType<P>) => {
-    new (props: P): {
+    new (props: P, context: Socket): {
         stateChanger: {
             [stateName: string]: (value: any) => void;
         };

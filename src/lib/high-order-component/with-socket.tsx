@@ -1,6 +1,6 @@
 import React from 'react';
 import SocketContext from '../context/socket-context';
-import {Socket} from '@runnan/obvious/lib/Socket'; // eslint-disable-line
+import {Socket} from '@runnan/obvious/lib/socket'; // eslint-disable-line
 
 /**
  * the HOC to genertate a component which can use the socket and get the state of obvious

@@ -1,6 +1,6 @@
 import useSocket from '../hooks/use-socket';
 import {useState, useEffect} from 'react';
-import {Socket} from '@runnan/obvious/lib/Socket'; // eslint-disable-line
+import {Socket} from '@runnan/obvious/lib/socket'; // eslint-disable-line
 
 /**
  * the hook to get and set state of obvious

@@ -6,7 +6,7 @@ var socket_context_1 = tslib_1.__importDefault(require("../context/socket-contex
 /**
  * the root component which store the context
  * @param {propsType} props props of component
- * @return {Component} the Context Provider
+ * @return {React.Component} the Context Provider
  */
 var Manager = function (props) {
     return (react_1.default.createElement(socket_context_1.default.Provider, { value: props.socket }, props.children));

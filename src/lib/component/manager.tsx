@@ -1,6 +1,6 @@
 import React from 'react';
 import SocketContext from '../context/socket-context';
-import {Socket} from '@runnan/obvious/lib/Socket'; // eslint-disable-line
+import {Socket} from '@runnan/obvious/lib/socket'; // eslint-disable-line
 
 type propsType = {
     socket: Socket
