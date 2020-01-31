@@ -1,5 +1,5 @@
 import React from 'react';
-import {Socket} from '@runnan/obvious/lib/Socket'; // eslint-disable-line
+import {Socket} from '@runnan/obvious/lib/socket'; // eslint-disable-line
 import {Manager} from '../../src/index';
 import List from './list';
 import AddItemButton from './add-item-button';

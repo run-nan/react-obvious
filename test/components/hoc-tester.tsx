@@ -1,6 +1,6 @@
 import React from 'react';
 import {withSocket, Manager} from '../../src/index';
-import {Socket} from '@runnan/obvious/lib/Socket'; // eslint-disable-line
+import {Socket} from '@runnan/obvious/lib/socket'; // eslint-disable-line
 
 type propsType = {
     // props provided by hoc
