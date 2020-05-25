@@ -15,9 +15,9 @@ npm install react @runnan/obvious @runnan/react-obvious
 在平台微服务中创建bus
 
 ```javaScript
-import {Bus} from '@runnan/obvious';
+import {createBus} from '@runnan/obvious';
 
-window.globalBus = new Bus({
+createBus('global', {
     reactApp: {
         js: ['/assets/js/reactApp.js'],
         css: ['/assets/css/reactApp.js']
@@ -30,8 +30,9 @@ window.globalBus = new Bus({
 ```javaScript
 // /assets/js/reactApp.js
 import {Manager} from '@runnan/react-obvious';
+import {getBus} from '@runnan/obvious';
 
-window.globalBus.createSocket('reactApp', ['state1'], (socket) => {
+getBus('global').createSocket('reactApp', ['state1'], (socket, config) => {
     // 初始化状态
     socket.initState('state2', 'value2');
 
@@ -40,7 +41,7 @@ window.globalBus.createSocket('reactApp', ['state1'], (socket) => {
         <Manager socket={socket}>
             <App />
         </Manager>
-    )
+    , config.container);
 });
 
 ```
